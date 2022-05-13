@@ -1,9 +1,12 @@
-import { Grid, List } from "@mui/material"
+import { Grid, List,} from "@mui/material";
+import { useEffect} from "react";
 import TodoItem from "../TodoItem/TodoItem"
 import axios from 'axios'
-import { useEffect } from "react"
+import { showTodo } from "../../redux/todoList/todo.action";
 import {connect} from 'react-redux'
-import {showTodo} from '../../redux/todoList/todo.action'
+
+
+
 const DisplayTodo = ({showTodo,getTodoList}) => {
     useEffect(() => {
       axios.get('http://localhost:8080/show-todos')
